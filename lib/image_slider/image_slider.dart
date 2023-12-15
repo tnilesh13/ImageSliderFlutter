@@ -12,6 +12,7 @@ class _ImageSliderState extends State<ImageSlider> {
     {"id": 1, "image_path": "assets/images/1.jpg"},
     {"id": 2, "image_path": "assets/images/2.jpg"},
     {"id": 3, "image_path": "assets/images/3.jpg"},
+    {"id": 4, "image_path": "assets/images/4.jpg"},
   ];
   final CarouselController carouselController = CarouselController();
 
@@ -39,11 +40,14 @@ class _ImageSliderState extends State<ImageSlider> {
                       .toList(),
                   carouselController: carouselController,
                   options: CarouselOptions(
-                    
-                      scrollPhysics: FixedExtentScrollPhysics(),
+                      // height: 180.0,
+                      enlargeCenterPage: true,
                       autoPlay: true,
-                      aspectRatio: 2,
-                      viewportFraction: 1,
+                      aspectRatio: 16 / 9,
+                      autoPlayCurve: Curves.fastOutSlowIn,
+                      enableInfiniteScroll: true,
+                      viewportFraction: 0.8,
+                      autoPlayAnimationDuration: Duration(milliseconds: 800),
                       onPageChanged: (index, reason) {
                         setState(() {
                           currentIndex = index;
@@ -63,12 +67,13 @@ class _ImageSliderState extends State<ImageSlider> {
                             carouselController.animateToPage(entry.key),
                         child: Container(
                           width: currentIndex == entry.key ? 17 : 7,
-                          height: 7.0,
+                          height: 7,
+                          // height: 7.0,
                           margin: const EdgeInsets.symmetric(horizontal: 3.0),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             color: currentIndex == entry.key
-                                ? Colors.red
+                                ? Color.fromARGB(255, 0, 204, 255)
                                 : Color.fromARGB(255, 231, 209, 9),
                           ),
                         ),
@@ -80,3 +85,7 @@ class _ImageSliderState extends State<ImageSlider> {
         ]));
   }
 }
+                      // scrollPhysics: BouncingScrollPhysics(),
+                      // autoPlay: true,
+                      // aspectRatio: 2,
+                      // viewportFraction: 1,
