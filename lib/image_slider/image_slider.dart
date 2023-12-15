@@ -1,5 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_all_basics/image_slider/image1.dart';
+import 'package:flutter_all_basics/image_slider/image_with_text.dart';
+import 'package:flutter_all_basics/image_slider/image_with_text_button.dart';
 
 class ImageSlider extends StatefulWidget {
   const ImageSlider({super.key});
@@ -9,11 +12,19 @@ class ImageSlider extends StatefulWidget {
 
 class _ImageSliderState extends State<ImageSlider> {
   List imagesList = [
-    {"id": 1, "image_path": "assets/images/1.jpg"},
-    {"id": 2, "image_path": "assets/images/2.jpg"},
-    {"id": 3, "image_path": "assets/images/3.jpg"},
-    {"id": 4, "image_path": "assets/images/4.jpg"},
+    {"id": 1, "image_path": "assets/images/m1.jpg"},
+    {"id": 2, "image_path": "assets/images/m2.jpg"},
+    {"id": 3, "image_path": "assets/images/m3.jpg"},
+    {"id": 4, "image_path": "assets/images/m4.jpg"},
   ];
+  List imagesListWithText = [
+    {"id": 1, "image_path": "assets/images/m1.jpg", "text1":"Image 1"},
+    {"id": 2, "image_path": "assets/images/m2.jpg", "text1":"Image 2"},
+    {"id": 3, "image_path": "assets/images/m3.jpg", "text1":"Image 3"},
+    {"id": 4, "image_path": "assets/images/m4.jpg", "text1":"Image 4"},
+  ];
+
+  
   final CarouselController carouselController = CarouselController();
 
   int currentIndex = 0;
@@ -31,20 +42,25 @@ class _ImageSliderState extends State<ImageSlider> {
               InkWell(
                 onTap: () {},
                 child: CarouselSlider(
-                  items: imagesList
-                      .map((image) => Image.asset(
-                            image["image_path"],
-                            fit: BoxFit.cover,
-                            width: double.infinity,
-                          ))
+                  // items: [
+                  //   Image.network("https://unsplash.com/photos/a-person-standing-on-top-of-a-mountain-under-a-cloudy-sky-Ah3ir6fxfqg")
+                  // ],
+                  items: imagesListWithText
+                      // .map((image) => Image.asset(
+                      //       image["image_path"],
+                      //       fit: BoxFit.cover,
+                      //       width: double.infinity,
+                      //     )
+                      //   )
+                      .map((image) => ImageWithTextButton(image))
                       .toList(),
                   carouselController: carouselController,
                   options: CarouselOptions(
-                      // height: 180.0,
+                      // height: 200.0,
                       enlargeCenterPage: true,
                       autoPlay: true,
                       aspectRatio: 16 / 9,
-                      autoPlayCurve: Curves.fastOutSlowIn,
+                      autoPlayCurve: Curves.easeOutCirc,
                       enableInfiniteScroll: true,
                       viewportFraction: 0.8,
                       autoPlayAnimationDuration: Duration(milliseconds: 800),
