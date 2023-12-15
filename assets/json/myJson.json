@@ -1,0 +1,43 @@
+{
+  "Sliders": {
+    "IndicatorSelectedColor": "red",
+    "IndicatorUnSelectedColor": "yellow",
+    "ViewPortFraction": 0.8,
+    "AutoPlay": true,
+    "Padding": "5",
+    "SliderViewType": "Enlarge",
+    
+    "Items": [
+      {
+        "SliderType": "Image",
+        "SliderText": "Slider with Image",
+        "Sliderlink": "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "SliderButtonText": "My Button",
+        "SliderbuttonColor": "Black",
+        "SliderBackgroundColor": "grey",
+        "SliderBannerType": "Product/Category/Blog/Weblink/Normal",
+        "SliderBannerUID": "1"
+      },
+      {
+        "SliderType": "ImageWithText",
+        "SliderText": "Slider with Text",
+        "Sliderlink": "https://images.unsplash.com/photo-1495277493816-4c359911b7f1?q=80&w=2065&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "SliderButtonText": "My Button",
+        "SliderbuttonColor": "Black",
+        "SliderBackgroundColor": "grey",
+        "SliderBannerType": "Product/Category/Blog/Weblink/Normal",
+        "SliderBannerUID": "2"
+      },
+      {
+        "SliderType": "ImageWithButtonText",
+        "SliderText": "Slider with Button",
+        "Sliderlink": "https://images.unsplash.com/photo-1437413646517-e98caade5a58?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "SliderButtonText": "My Button",
+        "SliderbuttonColor": "Black",
+        "SliderBackgroundColor": "grey",
+        "SliderBannerType": "Product/Category/Blog/Weblink/Normal",
+        "SliderBannerUID": "1234"
+      }
+    ]
+  }
+}
