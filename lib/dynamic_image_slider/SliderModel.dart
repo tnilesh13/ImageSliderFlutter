@@ -22,9 +22,9 @@ class Sliders {
   String? indicatorUnSelectedColor;
   double? viewPortFraction;
   bool? autoPlay;
-  String? padding;
+  double? padding;
   String? sliderViewType;
-  List<Items>? items;
+  List<SliderItems>? items;
 
   Sliders(
       {this.indicatorSelectedColor,
@@ -43,9 +43,9 @@ class Sliders {
     padding = json['Padding'];
     sliderViewType = json['SliderViewType'];
     if (json['Items'] != null) {
-      items = <Items>[];
+      items = <SliderItems>[];
       json['Items'].forEach((v) {
-        items!.add(new Items.fromJson(v));
+        items!.add(new SliderItems.fromJson(v));
       });
     }
   }
@@ -65,47 +65,51 @@ class Sliders {
   }
 }
 
-class Items {
+class SliderItems {
   String? sliderType;
   String? sliderText;
-  String? sliderlink;
+  String? sliderLink;
   String? sliderButtonText;
-  String? sliderbuttonColor;
+  String? sliderButtonColor;
   String? sliderBackgroundColor;
   String? sliderBannerType;
-  String? sliderBannerUID;
+  int? sliderBannerUID;
+  String? sliderButtonClicked;
 
-  Items(
+  SliderItems(
       {this.sliderType,
       this.sliderText,
-      this.sliderlink,
+      this.sliderLink,
       this.sliderButtonText,
-      this.sliderbuttonColor,
+      this.sliderButtonColor,
       this.sliderBackgroundColor,
       this.sliderBannerType,
-      this.sliderBannerUID});
+      this.sliderBannerUID,
+      this.sliderButtonClicked});
 
-  Items.fromJson(Map<String, dynamic> json) {
+  SliderItems.fromJson(Map<String, dynamic> json) {
     sliderType = json['SliderType'];
     sliderText = json['SliderText'];
-    sliderlink = json['Sliderlink'];
+    sliderLink = json['SliderLink'];
     sliderButtonText = json['SliderButtonText'];
-    sliderbuttonColor = json['SliderbuttonColor'];
+    sliderButtonColor = json['SliderButtonColor'];
     sliderBackgroundColor = json['SliderBackgroundColor'];
     sliderBannerType = json['SliderBannerType'];
     sliderBannerUID = json['SliderBannerUID'];
+    sliderButtonClicked = json['SliderButtonClicked'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['SliderType'] = this.sliderType;
     data['SliderText'] = this.sliderText;
-    data['Sliderlink'] = this.sliderlink;
+    data['SliderLink'] = this.sliderLink;
     data['SliderButtonText'] = this.sliderButtonText;
-    data['SliderbuttonColor'] = this.sliderbuttonColor;
+    data['SliderButtonColor'] = this.sliderButtonColor;
     data['SliderBackgroundColor'] = this.sliderBackgroundColor;
     data['SliderBannerType'] = this.sliderBannerType;
     data['SliderBannerUID'] = this.sliderBannerUID;
+    data['SliderButtonClicked'] = this.sliderButtonClicked;
     return data;
   }
 }
